@@ -1,19 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
-
+import {  StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { routes } from './router/index'
+import { Provider } from '@ant-design/react-native';
+import { useLoadFont } from 'utils/hooks/loadFont';
+import { generateScreens } from 'utils/screenBuild';
 export default function App() {
-  const onPressFunction = ()=>{
-    Alert.alert('heheha')
+  const Stack = createNativeStackNavigator();
+  const isReady = useLoadFont()
+  if (!isReady) {
+    return <View>
+      <Text>Loading...</Text>
+    </View>
   }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <Pressable onPress={onPressFunction}>
-        <Text>I'm pressable!!</Text>
-      </Pressable>
-    </View>
+    <Provider>
+      <NavigationContainer >
+        <Stack.Navigator>
+          {generateScreens(routes)}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
