@@ -1,5 +1,4 @@
-import React from 'react';
-import { FC, memo } from 'react';
+import React,{ FC, memo } from 'react';
 import { View, Text } from 'react-native';
 
 type IProps = {};

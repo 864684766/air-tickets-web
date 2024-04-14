@@ -1,8 +1,7 @@
-import React from 'react';
-import { FC, memo } from 'react';
+import React, { FC, memo } from 'react';
 import { View, Text } from 'react-native';
-
 import { Button, Toast } from '@ant-design/react-native';
+import Banner from './components/banner';
 type IProps = {};
 const Index: FC<IProps> = () => {
   const clickHandle = () => {
@@ -11,7 +10,8 @@ const Index: FC<IProps> = () => {
   }
 
   return <View>
-    <Text style={{ fontFamily: 'antfill',fontSize:20 }}>index111</Text>
+    <Banner />
+    <Text style={{ fontFamily: 'antfill', fontSize: 20 }}>index111</Text>
     <Button type="primary" onPress={clickHandle}>
       Start
     </Button>
