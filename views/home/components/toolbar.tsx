@@ -34,7 +34,7 @@ const Index: FC<IProps> = () => {
     <View style={styles.toolbar}>
       <View style={styles.toolbar_left}>
         <Text style={styles.toolbar_left_title}>{address}</Text>
-        <Icon name="down" size="sm" color="#fff" />
+        <Icon name="down" size={12} color="#fff" />
       </View>
     </View>
   );
@@ -52,6 +52,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "red",
     justifyContent: "flex-start",
+    paddingLeft:10,
+    paddingTop:2,
+    paddingBottom:2
   },
   toolbar_left_title: {
     color: "#fff",

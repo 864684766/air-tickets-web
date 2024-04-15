@@ -8,9 +8,9 @@ import { Text, View } from "react-native";
 const routes: Iroutes = [
   {
     name: "Home",
-    title: "Home",
+    title: "",
     component: Home,
-    headerShown: false,
+    headerShown: true,
     headerLeft: () => {
       return (
         <View>
